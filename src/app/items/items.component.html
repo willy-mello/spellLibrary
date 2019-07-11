@@ -1,0 +1,19 @@
+<div>
+  <form [formGroup]="searchForm" (ngSubmit)="onSubmit()">
+    <h5 *ngIf="success">Successful Submission</h5>
+
+    <label>
+      Search:
+      <input type="text" formControlName="search" />
+    </label>
+
+    <input type="submit" value="Search" class="cta" />
+    <button (click)="reset()">Reset</button>
+  </form>
+</div>
+<ul *ngIf="items">
+  <li *ngFor="let item of items">
+    <p>{{ item.name }}</p>
+    <app-one-item url="{{ item.url }}"></app-one-item>
+  </li>
+</ul>

@@ -1,0 +1,12 @@
+<div>
+  <!-- <button (click)="clickToOpen()">toggle info</button> -->
+  <ul *ngIf="open">
+    <li>Description: {{ spell.desc }}</li>
+    <li>Range: {{ spell.range }}</li>
+    <li>Duration: {{ spell.duration }}</li>
+    <li>Casting Time: {{ spell.casting_time }}</li>
+    <button (click)="addToInventory()">
+      add to inventory
+    </button>
+  </ul>
+</div>

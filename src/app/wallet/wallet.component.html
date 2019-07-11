@@ -1,0 +1,43 @@
+<h1>Wallet</h1>
+
+<form [formGroup]="transactionForm" (ngSubmit)="onSubmit()">
+  <h5 *ngIf="success">Successful Submission</h5>
+
+  <label>
+    Gold:
+    <input type="number" formControlName="gold" />
+    <div *ngIf="submitted && transactionForm.controls.gold.errors">
+      <div *ngIf="transactionForm.control.name.errors.required">
+        An amount is required homie
+      </div>
+    </div>
+  </label>
+  <label>
+    Silver:
+    <input type="number" formControlName="silver" />
+    <div *ngIf="submitted && transactionForm.controls.silver.errors">
+      <div *ngIf="transactionForm.control.silver.errors.required">
+        An amount is required homie
+      </div>
+    </div>
+  </label>
+  <label>
+    Copper:
+    <input type="number" formControlName="copper" />
+    <div *ngIf="submitted && transactionForm.controls.copper.errors">
+      <div *ngIf="transactionForm.control.copper.errors.required">
+        An amount is required homie
+      </div>
+    </div>
+  </label>
+  <input type="submit" value="Send Message" class="cta" />
+</form>
+
+<div *ngIf="submitted" class="results">
+  <strong>Gold:</strong>
+  <span>{{ transactionForm.controls.gold.value }}</span>
+  <strong>Silver:</strong>
+  <span>{{ transactionForm.controls.silver.value }}</span>
+  <strong>Copper:</strong>
+  <span>{{ transactionForm.controls.copper.value }}</span>
+</div>

@@ -1,0 +1,15 @@
+<div>
+  <button (click)="clickToOpen()">toggle info</button>
+  <ul *ngIf="open">
+    <li>
+      Damage: {{ item.damage.dice_count }}d{{ item.damage.dice_value }}
+      {{ item.damage.damage_type.name }}
+    </li>
+    <li>Range: {{ item.range.normal }}</li>
+    <li>Cost: {{ item.cost.quantity }}{{ item.cost.unit }}</li>
+    <li>Equipment Type: {{ item.equipment_category }}</li>
+    <button (click)="addToInventory()">
+      add to inventory
+    </button>
+  </ul>
+</div>

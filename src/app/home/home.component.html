@@ -1,0 +1,13 @@
+<h1 [class.gray]="h1Style">{{ armor }}</h1>
+
+<h1
+  [ngClass]="{
+    gray: h1Style,
+    large: !h1Style
+  }"
+>
+  test
+</h1>
+
+<button (click)="firstClick()">click me</button>
+<button (click)="secondClick()">click me</button>
